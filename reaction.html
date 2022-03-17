@@ -13,6 +13,7 @@
 
     <h2>Peddireddy reaction timer</h2>
 
+    <button type="button" class="btn btn-primary" onclick="startTime()"> Start Timer </button>
     <button type="button" class="btn btn-danger" onclick="recordReact()">React Now</button>
   
   <p id="target">Your time </p>
@@ -26,6 +27,26 @@
 
     }
 
+    var c = Math.floor(Math.random() * 9)+2;
+    function startTime() {
+      for (let i = 0; i < c+1; i++) {
+        setTimeout(() => {
+          document.getElementById('countdown').innerHTML = i
+        }, (c - i) * 1000)
+      }
+
+      setTimeout(() => {
+
+        if (myTime == undefined) {
+          document.getElementById('target').innerHTML = "Too Slow"
+        }
+        else {
+          var buttonTime = Date.now()
+          document.getElementById('target').innerHTML = "Time was " + (buttonTime - myTime)
+        }
+      }, 3000)
+    }
+  
 
   function buttonPress1() {
     setTimeout(function(){
