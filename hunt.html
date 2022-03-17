@@ -19,6 +19,13 @@ integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ
     <div class="alert alert-info" >Click on the squares to search for a bird</div>
     <div class="alert alert-info" id="shakes">Number of shakes is zero</div>
     <div class="alert alert-info" id="score">Location score is unknown</div>
+    <div class="container-fluid ">
+        <div class="d-inline p-2 bg-primary text-black centre">Click on the squares to search for bird.</div>
+        <div class="d-inline p-2 bg-success text-white" id="shakes"> Number of shakes is zero.</div>
+        <div class="d-inline p-2 bg-warning text-white" id="score"> Location score is unknown.</div>
+        <button type="button" class="btn btn-primary"  onclick="reset()">New Game</button>
+    </div>
+    <br>
 
     <div style="margin-left: 50px;">
         <div class="row">
@@ -108,6 +115,7 @@ integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ
      </div>
     </div>
     <script>
+
         var ids=["id0", "id1", "id2", "id3", "id4", "id5", "id6", "id7", "id8", "id9", "id10", "id11", "id12", "id13", "id14", "id15", "id16", "id17", "id18", "id19", "id20", "id21", "id22", "id23", "id24"]
         var shakeCount = 0
         var birdLocation = 18;
@@ -153,6 +161,10 @@ integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ
             else
                 return 0
         }
+        function reset(){
+            shakeCount = 0;
+            document.getElementById("shakes").innerHTML = "Number of shakes is " + shakeCount;
+            birdLocation = Math.floor(Math.random() * 25);}
     </script>
 </body>
 </html>
